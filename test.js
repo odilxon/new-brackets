@@ -62,21 +62,29 @@ it('should check if brackets sequence is correct 13', () => {
 });
 
 it('should check if brackets sequence is correct 14', () => {
-  assert.equal(check('8888877878887777777888888887777777887887788788887887777777788888888887788888', config6), true);
+  assert.equal(check('8888877878887777777888888887777777887887788788887887777777788888888887788888', config6), false);
 });
 
-it('should check if brackets sequence is not correct 15', () => {
-  assert.equal(check('[]][[]', config3), false);
+it('should check if brackets sequence is correct 15', () => {
+  assert.equal(check('111115611111111156111111112222888888222255778777787755556666777777777766222221111222288888822225577877778775555666677777777776622222', config6), true);
 });
 
 it('should check if brackets sequence is not correct 16', () => {
-  assert.equal(check('[]][[]', config2), false);
+  assert.equal(check('[]][[]', config3), false);
 });
 
 it('should check if brackets sequence is not correct 17', () => {
+  assert.equal(check('[]][[]', config2), false);
+});
+
+it('should check if brackets sequence is not correct 18', () => {
   assert.equal(check('([[[[(({{{}}}(([](((((((())))||||||))))[[{{|{{}}|}}[[[[]]]]{{{{{}}}}}]]))))]]]]))()', config7), false);
 });
 
-it('should check if brackets sequence is correct 18', () => {
+it('should check if brackets sequence is correct 19', () => {
   assert.equal(check('([[[[(({{{}}}(([](((((((())))||||||))))[[{{|{{}}|}}[[[[]]]]{{{{{}}}}}]]))))]]]])(())', config7), true);
+});
+
+it('should check if brackets sequence is correct 20', () => {
+  assert.equal(check('([[[[(({{{}}}(([](((((((())))||||||))))[[{{|{{}}|}}[[[[]]]]{{{{{}}}}}]]))))]]]])((([[[[(({{{}}}(([](((((((())))||||||))))[[{{|{{}}|}}[[[[]]]]{{{{{}}}}}]]))))]]]])))', config7), true);
 });
